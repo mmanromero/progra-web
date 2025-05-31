@@ -6,7 +6,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 - 📖 Por leer
 - 🛒 Wishlist (libros que quiero comprar)
 
-## ✨ Funcionalidades
+## Funcionalidades
 
 - Agregar libros con título, autor, categoría e imagen de portada
 - Visualización de los libros en formato de tarjetas (cards) con Bootstrap
@@ -15,7 +15,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 - Persistencia de datos con `localStorage`
 - Diseño responsive para desktop y mobile
 
-## 🧠 Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML semántico
 - CSS3 (con diseño responsive y colores pastel)
@@ -23,7 +23,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 - Bootstrap 5.3 (via CDN)
 - `localStorage` para persistencia local
 
-## 💻 Cómo usarlo
+## Cómo usarlo
 
 1. Accedé a la página publicada:  
    👉 [https://mmanromero.github.io/progra-web/](https://mmanromero.github.io/progra-web/)
@@ -36,7 +36,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 
 3. Editá o eliminá libros desde las secciones correspondientes.
 
-## 📂 Estructura del proyecto
+## Estructura del proyecto
 progra-web/
 ├── index.html
 ├── style.css
