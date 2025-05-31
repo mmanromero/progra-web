@@ -89,6 +89,27 @@ body {
     padding-bottom: 0.3rem;
     margin-bottom: 1rem;
   }
+  .wishlist-titulo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .wishlist-titulo .btn {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #b8e0d2;
+    color: #2e5f49;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+  }
+  
+  .wishlist-titulo .btn:hover {
+    background-color: #a0d7b8;
+    text-decoration: none;
+  }
   
   /* === Grilla de libros === */
   .grilla {
