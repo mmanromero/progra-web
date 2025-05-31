@@ -2,69 +2,61 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Biblioteca de Manu</title>
+  <title>Mi Biblioteca Personal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdf6e3;
-      color: #333;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      color: #2a4d69;
-      margin-bottom: 0.5rem;
-    }
-
-    h2 {
-      color: #4b86b4;
-    }
-
-    .libros {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .libro {
-      background-color: #fff;
-      border: 1px solid #ddd;
-      border-radius: 12px;
-      padding: 1rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    }
-
-    .libro h3 {
-      margin-top: 0;
-      color: #2a4d69;
-    }
-
-    .libro p {
-      font-size: 0.9rem;
-      color: #555;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📚 Biblioteca de Manuu!! </h1>
-  <p>¡Bienvenid@! Acá vas a encontrar una selección de mis libros favoritos.</p>
+  <header>
+    <h1>📚 Mi Biblioteca Personal</h1>
+    <nav>
+      <a href="#leidos">Leídos</a>
+      <a href="#por-leer">Por leer</a>
+      <a href="#wishlist">Wishlist</a>
+      <a href="#formulario">Agregar libro</a>
+    </nav>
+  </header>
 
-  <div class="libros">
-    <div class="libro">
-      <h3>1984</h3>
-      <p>George Orwell<br><em>Distopía, política, libertad</em></p>
-    </div>
-    <div class="libro">
-      <h3>Cien años de soledad</h3>
-      <p>Gabriel García Márquez<br><em>Realismo mágico, historia, familia</em></p>
-    </div>
-    <div class="libro">
-      <h3>El principito</h3>
-      <p>Antoine de Saint-Exupéry<br><em>Infancia, amor, filosofía</em></p>
-    </div>
-  </div>
+  <main>
+    <section id="presentacion">
+      <p>Bienvenid@ a mi biblioteca. Acá organizo mis libros leídos, los que me faltan leer y los que quiero comprar.</p>
+    </section>
+
+    <section id="leidos">
+      <h2>📘 Libros Leídos</h2>
+      <div class="grilla" id="grilla-leidos"></div>
+    </section>
+
+    <section id="por-leer">
+      <h2>📖 Por Leer</h2>
+      <div class="grilla" id="grilla-por-leer"></div>
+    </section>
+
+    <section id="wishlist">
+      <h2>🛍️ Wishlist</h2>
+      <div class="grilla" id="grilla-wishlist"></div>
+    </section>
+
+    <section id="formulario">
+      <h2>➕ Agregar un Libro</h2>
+      <form id="form-libro">
+        <input type="text" id="titulo" placeholder="Título del libro" required>
+        <input type="text" id="autor" placeholder="Autor/a" required>
+        <select id="categoria" required>
+          <option value="">Seleccionar categoría</option>
+          <option value="leidos">Leído</option>
+          <option value="por-leer">Por leer</option>
+          <option value="wishlist">Wishlist</option>
+        </select>
+        <button type="submit">Agregar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 - Hecho por Manu</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
