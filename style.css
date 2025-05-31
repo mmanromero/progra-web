@@ -13,10 +13,40 @@ body {
     object-fit: cover;
     display: block;
   }
+  #sobre-mi {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .sobre-mi-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .avatar-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+  
+  .descripcion {
+    max-width: 500px;
+    font-size: 1rem;
+    color: #444;
+  }
   
   /* === Header === */
   header {
-    background-color: #fddde6;
+    background-color: #c9e4de; 
     padding: 1rem;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
