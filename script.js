@@ -9,34 +9,40 @@ document.addEventListener("DOMContentLoaded", cargarLibros);
 
 // Manejar el envío del formulario
 form.addEventListener("submit", function (e) {
-  e.preventDefault();
-  const titulo = inputTitulo.value.trim();
-  const autor = inputAutor.value.trim();
-  const categoria = inputCategoria.value;
-
-  if (!titulo || !autor || !categoria) {
-    alert("Completá todos los campos");
-    return;
-  }
-
-  const nuevoLibro = {
-    id: Date.now(),
-    titulo,
-    autor,
-    categoria
-  };
-
-  // Guardar en localStorage
-  const libros = obtenerLibros();
-  libros.push(nuevoLibro);
-  localStorage.setItem("libros", JSON.stringify(libros));
-
-  // Renderizar
-  agregarLibroACard(nuevoLibro);
-
-  // Resetear el formulario
-  form.reset();
-});
+    e.preventDefault();
+    const titulo = inputTitulo.value.trim();
+    const autor = inputAutor.value.trim();
+    const categoria = inputCategoria.value;
+    const archivoImagen = document.getElementById("imagen").files[0];
+  
+    if (!titulo || !autor || !categoria || !archivoImagen) {
+      alert("Completá todos los campos");
+      return;
+    }
+  
+    const lector = new FileReader();
+    lector.onload = function () {
+      const imagenBase64 = lector.result;
+  
+      const nuevoLibro = {
+        id: Date.now(),
+        titulo,
+        autor,
+        categoria,
+        imagen: imagenBase64
+      };
+  
+      const libros = obtenerLibros();
+      libros.push(nuevoLibro);
+      localStorage.setItem("libros", JSON.stringify(libros));
+  
+      agregarLibroACard(nuevoLibro);
+      form.reset();
+    };
+  
+    lector.readAsDataURL(archivoImagen);
+  });
+  
 
 // Obtener libros del localStorage
 function obtenerLibros() {
@@ -58,14 +64,16 @@ function agregarLibroACard(libro) {
   const card = document.createElement("div");
   card.className = "card";
   card.innerHTML = `
-    <div class="card-body">
-      <h5 class="card-title">${libro.titulo}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">${libro.autor}</h6>
-      <p class="card-text">Categoría: ${libro.categoria}</p>
-      <button class="btn btn-sm btn-outline-primary me-2">Editar</button>
-      <button class="btn btn-sm btn-outline-danger">Eliminar</button>
-    </div>
-  `;
+  <img src="${libro.imagen}" class="card-img-top" alt="${libro.titulo}">
+  <div class="card-body">
+    <h5 class="card-title">${libro.titulo}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${libro.autor}</h6>
+    <p class="card-text">Categoría: ${libro.categoria}</p>
+    <button class="btn btn-sm btn-outline-primary me-2">Editar</button>
+    <button class="btn btn-sm btn-outline-danger">Eliminar</button>
+  </div>
+`;
+
 
   // Botones
   const botonEditar = card.querySelector(".btn-outline-primary");
