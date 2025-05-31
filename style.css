@@ -1,0 +1,152 @@
+/* === Estilo general === */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f0;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* === Header === */
+  header {
+    background-color: #fddde6;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    color: #4b4453;
+  }
+  
+  nav {
+    margin-top: 0.5rem;
+  }
+  
+  nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #725b8c;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* === Secciones === */
+  section {
+    padding: 2rem 1rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  section h2 {
+    color: #5d576b;
+    border-bottom: 2px solid #d9c3e6;
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* === Grilla de libros === */
+  .grilla {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  .libro {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: 1rem;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  }
+  
+  .libro h3 {
+    margin-top: 0;
+    color: #4a4e69;
+  }
+  
+  .libro p {
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  .boton {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+  }
+  
+  .boton-editar {
+    background-color: #f9c5d1;
+    color: #333;
+    margin-right: 0.3rem;
+  }
+  
+  .boton-eliminar {
+    background-color: #fdaaaa;
+    color: white;
+  }
+  
+  /* === Formulario === */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  input, select, button {
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  button {
+    background-color: #b8e0d2;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #a0d5c2;
+  }
+  
+  /* === Footer === */
+  footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #f2e8cf;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+  }
+  
+  /* === Responsive === */
+  @media screen and (max-width: 600px) {
+    nav a {
+      display: inline-block;
+      margin: 0.5rem 0.7rem;
+    }
+  
+    .libro {
+      width: 100%;
+    }
+  
+    form {
+      width: 90%;
+    }
+  }
+  
