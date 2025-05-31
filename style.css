@@ -55,7 +55,11 @@ body {
   header h1 {
     margin: 0;
     color: #4b4453;
+    font-family: "Rampart One", sans-serif;
+    font-size: 3rem;
+    letter-spacing: 1px;
   }
+  
   
   nav {
     margin-top: 0.5rem;
