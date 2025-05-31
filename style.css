@@ -85,6 +85,12 @@ body {
     cursor: pointer;
     font-size: 0.85rem;
   }
+  .card-img-top {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+  }  
   
   .boton-editar {
     background-color: #f9c5d1;
