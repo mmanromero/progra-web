@@ -126,8 +126,8 @@ body {
     background-color: #fff;
     border: 1px solid #eee;
     border-radius: 12px;
-    padding: 1rem;
-    width: 250px;
+    padding: 0.8rem;
+    width: 180px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
   }
   
@@ -150,10 +150,10 @@ body {
     font-size: 0.85rem;
   }
   .card-img-top {
-    height: 250px;
+    height: 180px;
     object-fit: cover;
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
   }  
   
   .boton-editar {
