@@ -111,6 +111,9 @@ function agregarLibroACard(libro) {
       card.querySelector(".card-title").textContent = nuevoTitulo;
       card.querySelector(".card-subtitle").textContent = nuevoAutor;
       card.querySelector(".card-text").textContent = "Categoría: " + nuevaCategoria;
+
+      location.reload();
+
     }
   });
 
