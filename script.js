@@ -54,6 +54,34 @@ function cargarLibros() {
   const libros = obtenerLibros();
   libros.forEach(agregarLibroACard);
 }
+//para recargar cuando editas
+function mostrarLibros() {
+  const libros = obtenerLibros();
+
+  // Obtener los contenedores por categoría
+  const grillaLeidos = document.getElementById("grilla-leidos");
+  const grillaPorLeer = document.getElementById("grilla-por-leer");
+  const grillaWishlist = document.getElementById("grilla-wishlist");
+
+  // Limpiar cada grilla
+  grillaLeidos.innerHTML = "";
+  grillaPorLeer.innerHTML = "";
+  grillaWishlist.innerHTML = "";
+
+  // Recorrer libros y agregarlos a su grilla correspondiente
+  libros.forEach((libro) => {
+    const card = crearCard(libro);
+
+    if (libro.categoria === "leidos") {
+      grillaLeidos.appendChild(card);
+    } else if (libro.categoria === "por-leer") {
+      grillaPorLeer.appendChild(card);
+    } else if (libro.categoria === "wishlist") {
+      grillaWishlist.appendChild(card);
+    }
+  });
+}
+
 
 // Agregar un libro a la sección correcta como una card de Bootstrap
 function agregarLibroACard(libro) {
@@ -112,7 +140,7 @@ function agregarLibroACard(libro) {
       card.querySelector(".card-subtitle").textContent = nuevoAutor;
       card.querySelector(".card-text").textContent = "Categoría: " + nuevaCategoria;
 
-      location.reload();
+      mostrarLibros();
 
     }
   });
