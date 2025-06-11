@@ -90,9 +90,16 @@ function agregarLibroACard(libro) {
   botonEditar.addEventListener("click", () => {
     const nuevoTitulo = prompt("Nuevo título:", libro.titulo);
     const nuevoAutor = prompt("Nuevo autor:", libro.autor);
-    if (nuevoTitulo && nuevoAutor) {
+    const nuevaCategoria = prompt(
+      "Nueva categoría (leidos / por-leer / wishlist):",
+      libro.categoria
+    );
+    const categoriasValidas = ["leidos", "por-leer", "wishlist"];
+    if (nuevoTitulo && nuevoAutor && nuevaCategoria &&
+      categoriasValidas.includes(nuevaCategoria)) {
       libro.titulo = nuevoTitulo;
       libro.autor = nuevoAutor;
+      libro.categoria = nuevaCategoria;
 
       // Actualizar en localStorage
       const libros = obtenerLibros().map((l) =>
@@ -103,6 +110,7 @@ function agregarLibroACard(libro) {
       // Actualizar en pantalla
       card.querySelector(".card-title").textContent = nuevoTitulo;
       card.querySelector(".card-subtitle").textContent = nuevoAutor;
+      card.querySelector(".card-text").textContent = "Categoría: " + nuevaCategoria;
     }
   });
 
