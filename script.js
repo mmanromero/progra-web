@@ -63,6 +63,25 @@ form.addEventListener("submit", (e) => {
   }
 });
 
+function actualizarProgreso() {
+  // Días restantes
+  const hoy = new Date();
+  const finDeAnio = new Date(hoy.getFullYear(), 11, 31); // 31 de diciembre
+  const diffTime = finDeAnio - hoy;
+  const diasRestantes = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  document.getElementById("dias-restantes").textContent = diasRestantes;
+
+  // Libros leídos
+  const libros = obtenerLibros();
+  const leidos = libros.filter(libro => libro.categoria === "leidos").length;
+  document.getElementById("contador-leidos").textContent = leidos;
+}
+
+// Ejecutarlo al cargar
+document.addEventListener("DOMContentLoaded", () => {
+  actualizarProgreso();
+});
+
   
 
 // Obtener libros del localStorage

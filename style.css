@@ -219,4 +219,18 @@ body {
       width: 90%;
     }
   }
-  
+/* === Progreso de Lectura y Cuenta Regresiva === */
+.progreso {
+  text-align: center;
+  background-color: #e8f6f3;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  border-top: 2px dashed #c9e4de;
+  border-bottom: 2px dashed #c9e4de;
+}
+
+.contador p {
+  margin: 0.3rem;
+  font-size: 1.1rem;
+  color: #4a4e69;
+}
