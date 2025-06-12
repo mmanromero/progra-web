@@ -8,7 +8,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 
 ## Funcionalidades
 
-- Agregar libros con título, autor, categoría e imagen de portada
+- Agregar libros con título, autor, categoría e imagen de portada (validación incluida)
 - Visualización de los libros en formato de tarjetas (cards) con Bootstrap
 - Edición de libros directamente desde la interfaz
 - Eliminación de libros
