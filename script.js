@@ -8,40 +8,61 @@ const inputCategoria = document.getElementById("categoria");
 document.addEventListener("DOMContentLoaded", cargarLibros);
 
 // Manejar el envío del formulario
-form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const titulo = inputTitulo.value.trim();
-    const autor = inputAutor.value.trim();
-    const categoria = inputCategoria.value;
-    const archivoImagen = document.getElementById("imagen").files[0];
-  
-    if (!titulo || !autor || !categoria || !archivoImagen) {
-      alert("Completá todos los campos");
-      return;
-    }
-  
-    const lector = new FileReader();
-    lector.onload = function () {
-      const imagenBase64 = lector.result;
-  
-      const nuevoLibro = {
-        id: Date.now(),
-        titulo,
-        autor,
-        categoria,
-        imagen: imagenBase64
-      };
-  
-      const libros = obtenerLibros();
-      libros.push(nuevoLibro);
-      localStorage.setItem("libros", JSON.stringify(libros));
-  
-      agregarLibroACard(nuevoLibro);
-      form.reset();
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const titulo = document.getElementById("titulo").value.trim();
+  const autor = document.getElementById("autor").value.trim();
+  const categoria = document.getElementById("categoria").value.trim().toLowerCase();
+
+  const categoriasValidas = ["leidos", "por-leer", "wishlist"];
+
+  // === VALIDACIONES ===
+  if (!titulo) {
+    alert("El título no puede estar vacío.");
+    return;
+  }
+
+  if (!autor || !/^[a-zA-Z\s]+$/.test(autor)) {
+    alert("El autor debe contener solo letras y espacios.");
+    return;
+  }
+
+  if (!categoriasValidas.includes(categoria)) {
+    alert("La categoría debe ser: leidos, por-leer o wishlist.");
+    return;
+  }
+
+  // SI TODO ESTÁ OK
+  const archivoImagen = document.getElementById("imagen").files[0];
+  const lector = new FileReader();
+
+  lector.onload = function () {
+    const imagenBase64 = lector.result;
+
+    const nuevoLibro = {
+      id: Date.now(),
+      titulo,
+      autor,
+      categoria,
+      imagen: imagenBase64
     };
-  
+
+    const libros = obtenerLibros();
+    libros.push(nuevoLibro);
+    localStorage.setItem("libros", JSON.stringify(libros));
+
+    agregarLibroACard(nuevoLibro);
+    form.reset();
+  };
+
+  if (archivoImagen) {
     lector.readAsDataURL(archivoImagen);
-  });
+  } else {
+    alert("Por favor, seleccioná una imagen del libro.");
+  }
+});
+
   
 
 // Obtener libros del localStorage
