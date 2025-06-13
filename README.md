@@ -9,7 +9,8 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 ## Funcionalidades
 
 - Agregar libros con título, autor, categoría e imagen de portada (validación incluida)
-- Visualización de los libros en formato de tarjetas (cards) con Bootstrap
+- Visualización de los libros en formato de tarjetas (cards) y barra de progreso con Bootstrap el objetivo es 20 libros
+
 - Edición de libros directamente desde la interfaz
 - Eliminación de libros
 - Persistencia de datos con `localStorage`
@@ -26,7 +27,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
 ## Cómo usarlo
 
 1. Accedé a la página publicada:  
-   👉 [https://mmanromero.github.io/progra-web/](https://mmanromero.github.io/progra-web/)
+   👉 https://mmanromero.github.io/progra-web/
 
 2. Completá el formulario para agregar un nuevo libro:
    - Título
@@ -34,7 +35,7 @@ Este proyecto es una aplicación web simple creada como trabajo práctico para l
    - Categoría
    - Imagen (desde tu computadora)
 
-3. Editá o eliminá libros desde las secciones correspondientes.
+3. Editá o eliminá libros desde las secciones correspondientes: Recarga la pagina cada vez que edites la categoria para que se reubique el libro en el lugar correspondiente y lo mismo pra que se actualice el progreso
 
 ## Estructura del proyecto
 progra-web/
