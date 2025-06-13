@@ -221,25 +221,25 @@ body {
   }
 /* === Progreso de Lectura y Cuenta Regresiva === */
 .progreso {
-  width: 100vw; /* ocupa todo el ancho visible */
-  background-color: #f2e6fa; /* violeta pastel */
-  padding: 1.5rem 1rem;
-  margin: 0 auto 2rem auto;
+  width: 100%;
+  background-color: #f2e6fa; /* violeta suave */
   border-top: 2px dashed #d9c3e6;
   border-bottom: 2px dashed #d9c3e6;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
 .contador {
   max-width: 900px;
-  margin: auto;
-  text-align: center;
+  margin: 0 auto;
 }
 
 .contador p {
-  font-size: 1rem;       
-  font-weight: normal;   
   margin: 0.5rem 0;
-  color: #4a4e69;
+  font-size: 1.2rem;
+  color: #4b4453;
+  font-weight: 400;
 }
+
 
 
