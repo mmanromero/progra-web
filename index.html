@@ -35,15 +35,27 @@
           <p>¡Hola! Bienvenid@ a mi biblioteca. Soy Manu, me encanta leer y esta biblioteca personal es mi forma de organizar lo que leí, lo que tengo pendiente y lo que me muero por comprar. ¡Gracias por pasar!</p>
         </div>
       </div>
-    </section> <!-- 🔁 AGREGÁ este cierre -->
+    </section> 
     
     <!-- ✅ Ahora el progreso queda fuera y abajo -->
-    <section id="progreso-lectura" class="progreso">
-      <div class="contador">
-        <p><strong>Días restantes del año:</strong> <span id="dias-restantes"></span></p>
-        <p><strong>Libros leídos:</strong> <span id="contador-leidos"></span> / 20</p>
+    <section id="progreso-lectura">
+      <div class="progreso-container">
+        <p><strong>Progreso de lectura:</strong> <span id="contador-leidos-texto">0 / 20</span></p>
+        <div class="progress">
+          <div
+            class="progress-bar bg-success"
+            id="barra-progreso"
+            role="progressbar"
+            style="width: 0%"
+            aria-valuenow="0"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+        <p><small><span id="dias-restantes"></span> días restantes del año</small></p>
       </div>
-    </section>    
+    </section>
+    
     
         
       </section>      

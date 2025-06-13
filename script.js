@@ -64,23 +64,25 @@ form.addEventListener("submit", (e) => {
 });
 
 function actualizarProgreso() {
-  // Días restantes
   const hoy = new Date();
-  const finDeAnio = new Date(hoy.getFullYear(), 11, 31); // 31 de diciembre
-  const diffTime = finDeAnio - hoy;
-  const diasRestantes = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-  document.getElementById("dias-restantes").textContent = diasRestantes;
+  const finDeAnio = new Date(hoy.getFullYear(), 11, 31);
+  const diff = Math.ceil((finDeAnio - hoy) / (1000 * 60 * 60 * 24));
+  document.getElementById("dias-restantes").textContent = diff;
 
-  // Libros leídos
-  const libros = obtenerLibros();
+  const libros = JSON.parse(localStorage.getItem("libros")) || [];
   const leidos = libros.filter(libro => libro.categoria === "leidos").length;
-  document.getElementById("contador-leidos").textContent = leidos;
+
+  const porcentaje = Math.min(Math.round((leidos / 20) * 100), 100);
+
+  const barra = document.getElementById("barra-progreso");
+  barra.style.width = `${porcentaje}%`;
+  barra.setAttribute("aria-valuenow", porcentaje);
+  barra.textContent = `${porcentaje}%`;
+
+  document.getElementById("contador-leidos-texto").textContent = `${leidos} / 20`;
 }
 
-// Ejecutarlo al cargar
-document.addEventListener("DOMContentLoaded", () => {
-  actualizarProgreso();
-});
+actualizarProgreso();
 
   
 
